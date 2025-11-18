@@ -87,7 +87,7 @@ const projects = [
 </section>
 
 <style>
-	/* Sección de proyectos con fondo negro alternativo */
+	/* Sección proyectos */
 	.projects {
 		padding: 6rem 2rem;
 		background: #0a0a0a;
@@ -110,7 +110,7 @@ const projects = [
 		margin: 0 auto;
 	}
 
-	/* Título de sección con efecto metálico */
+	/* Título*/
 	h2 {
 		font-size: clamp(2.5rem, 5vw, 4rem);
 		text-align: center;
@@ -121,7 +121,7 @@ const projects = [
 		text-shadow: 0 0 30px rgba(148, 163, 184, 0.3);
 	}
 
-	/* Descripción de sección */
+	/* Descripción*/
 	.section-description {
 		text-align: center;
 		color: #94a3b8;
@@ -130,7 +130,7 @@ const projects = [
 		font-weight: 400;
 	}
 
-	/* Lista de proyectos con espaciado vertical */
+	/* Lista de proyectos*/
 	.projects-list {
 		display: flex;
 		flex-direction: column;
@@ -138,7 +138,7 @@ const projects = [
 		margin-bottom: 5rem;
 	}
 
-	/* Tarjeta de proyecto horizontal con animación de entrada */
+	/* Tarjeta con animación*/
 	.project-card {
 		opacity: 0;
 		animation: slideIn 0.6s ease forwards;
@@ -156,7 +156,7 @@ const projects = [
 		}
 	}
 
-	/* Contenedor interno con layout horizontal */
+	/* Contenedor interno */
 	.card-inner {
 		background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(30, 30, 30, 0.95));
 		border: 1px solid rgba(148, 163, 184, 0.3);
@@ -169,7 +169,7 @@ const projects = [
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 	}
 
-	/* Efecto de brillo metálico al hacer hover */
+	/* Efecto de brillo*/
 	.card-inner::before {
 		content: '';
 		position: absolute;
@@ -190,7 +190,7 @@ const projects = [
 		transform: translateY(-5px);
 	}
 
-	/* Contenedor de imagen del proyecto */
+	/* Contenedor de imagenes*/
 	.project-image {
 		width: 100%;
 		height: 100%;
@@ -209,7 +209,7 @@ const projects = [
 		transform: scale(1.1);
 	}
 
-	/* Overlay oscuro sobre la imagen */
+	/* Overlay sobre imagen*/
 	.image-overlay {
 		position: absolute;
 		inset: 0;
@@ -252,7 +252,7 @@ const projects = [
 		box-shadow: 0 6px 25px rgba(148, 163, 184, 0.6);
 	}
 
-	/* Contenido del proyecto */
+	/* Contenido*/
 	.project-content {
 		padding: 2.5rem;
 		display: flex;
@@ -260,7 +260,7 @@ const projects = [
 		justify-content: center;
 	}
 
-	/* Header con título y enlace a GitHub */
+	/* Header con título */
 	.project-header {
 		display: flex;
 		align-items: center;
@@ -278,7 +278,7 @@ const projects = [
 		background-clip: text;
 	}
 
-	/* Enlace de GitHub en el header */
+	/* Enlace de GitHub */
 	.github-link {
 		width: 40px;
 		height: 40px;
@@ -308,7 +308,7 @@ const projects = [
 		color: #0f172a;
 	}
 
-	/* Descripción del proyecto */
+	/* Descripción */
 	.project-description {
 		color: #cbd5e1;
 		line-height: 1.7;
@@ -316,7 +316,6 @@ const projects = [
 		font-size: 1rem;
 	}
 
-	/* Stack de tecnologías */
 	.tech-stack {
 		display: flex;
 		flex-wrap: wrap;
@@ -340,7 +339,6 @@ const projects = [
 		transform: translateY(-2px);
 	}
 
-	/* Sección de llamado a la acción */
 	.cta-section {
 		text-align: center;
 		padding: 3rem 2rem;
@@ -357,7 +355,7 @@ const projects = [
 		font-weight: 500;
 	}
 
-	/* Botón principal de GitHub */
+	/* Botón principal github*/
 	.btn-github {
 		display: inline-flex;
 		align-items: center;
@@ -384,14 +382,7 @@ const projects = [
 		box-shadow: 0 8px 30px rgba(148, 163, 184, 0.6), 0 0 40px rgba(203, 213, 225, 0.2);
 	}
 
-	/* Responsive para tablets */
-	@media (max-width: 1024px) {
-		.card-inner {
-			grid-template-columns: 350px 1fr;
-		}
-	}
-
-	/* Responsive para móviles */
+	/* Responsive*/
 	@media (max-width: 768px) {
 		.card-inner {
 			grid-template-columns: 1fr;

@@ -47,14 +47,12 @@
 </section>
 
 <style>
-	/* Sección sobre mí con fondo negro alternativo */
+	/* Sección sobre mí */
 	.about {
 		padding: 6rem 2rem;
 		background: #0a0a0a;
 		position: relative;
 	}
-
-	/* Línea decorativa superior con gradiente plateado */
 	.about::before {
 		content: '';
 		position: absolute;
@@ -70,7 +68,7 @@
 		margin: 0 auto;
 	}
 
-	/* Título de sección con efecto metálico */
+	/* Título de sección */
 	h2 {
 		font-size: clamp(2.5rem, 5vw, 4rem);
 		text-align: center;
@@ -81,7 +79,7 @@
 		text-shadow: 0 0 30px rgba(148, 163, 184, 0.3);
 	}
 
-	/* Decoración con gradiente plateado brillante */
+	/* Decoración */
 	h2::after {
 		content: '';
 		display: block;
@@ -98,7 +96,7 @@
 		gap: 4rem;
 	}
 
-	/* Párrafos de texto con mejor legibilidad */
+	/* Párrafos */
 	.text p {
 		color: #cbd5e1;
 		line-height: 1.9;
@@ -106,7 +104,7 @@
 		font-size: 1.125rem;
 	}
 
-	/* Texto destacado con gradiente plateado */
+	/* Texto strong */
 	.text strong {
 		color: #f8fafc;
 		font-weight: 600;
@@ -117,7 +115,7 @@
 		text-shadow: 0 2px 10px rgba(148, 163, 184, 0.3);
 	}
 
-	/* Grid de estadísticas */
+	/* Estadísticas */
 	.stats {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -125,7 +123,7 @@
 		margin-top: 2rem;
 	}
 
-	/* Tarjetas de estadísticas con efecto metálico */
+	/* Tarjetas */
 	.stat {
 		background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(30, 30, 30, 0.95));
 		border: 1px solid rgba(148, 163, 184, 0.3);
@@ -139,7 +137,7 @@
 		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.05);
 	}
 
-	/* Efecto de brillo metálico al hacer hover */
+	/* Efecto de brillo*/
 	.stat::before {
 		content: '';
 		position: absolute;
@@ -168,7 +166,7 @@
 		margin-bottom: 1rem;
 	}
 
-	/* Números de estadísticas con efecto brillante */
+	/* Números de estadísticas */
 	.number {
 		font-size: 3rem;
 		font-weight: 800;
@@ -181,7 +179,7 @@
 		position: relative;
 	}
 
-	/* Efecto de resplandor detrás de los números */
+	/* Efecto de resplandor*/
 	.number::after {
 		content: attr(data-number);
 		position: absolute;
@@ -205,7 +203,7 @@
 		letter-spacing: 0.5px;
 	}
 
-	/* Responsive para móviles */
+	/* Responsive */
 	@media (max-width: 640px) {
 		.stats {
 			grid-template-columns: 1fr;
