@@ -4,7 +4,9 @@ import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Skills from '../components/Skills.astro';
 import Projects from '../components/Projects.astro';
+import Blog from '../components/Blog.astro';
 import Contact from '../components/Contact.astro';
+import ContactForm from "../components/molecules/ContactForm.jsx";
 ---
 
 <Layout title="Alejandro Sánchez García - Desarrollador">
@@ -12,7 +14,10 @@ import Contact from '../components/Contact.astro';
 	<About />
 	<Skills />
 	<Projects />
+	<Blog />
+	<ContactForm client:load />
 	<Contact />
+	
 </Layout>
 
 <style is:global>
