@@ -1,0 +1,122 @@
+---
+import Icon from "../components/atoms/Icon.astro";
+import "../styles/global.css";
+import Navbar from "../components/organisms/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en"
+class="bg-white dark:bg-gray-700 text-darkBlue dark:text-white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contacto</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <body>
+        <Navbar />
+        <section id="contact" class="py-24 px-6 max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 text-purple">Contacto</h2>
+            <p class="text-lg text-softWhite/80 max-w-2xl mx-auto mb-12">
+                ¿Trabajamos juntos? Envíame un mensaje. Estoy listo para
+                colaborar contigo y construir soluciones modernas, rápidas y
+                elegantes.
+            </p>
+
+
+            <!-- action="https://formspree.io/f/xeovnnjv" -->
+
+            <!-- Formulario de Contacto -->
+            <form
+                id="contactForm"
+                action="#--cambiar"
+                
+                method="POST"
+                class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto animate-slide-up"
+            >
+                <input
+                    type="text"
+                    placeholder="Tu nombre"
+                    class="p-4 rounded-xl bg-white/10 border border-black/50 dark:border-white/20 focus:outline-none focus:border-purple text-black dark:text-white"
+                    required
+                />
+                <input
+                    type="email"
+                    placeholder="Tu correo"
+                    class="p-4 rounded-xl bg-white/10 border border-black/50 dark:border-white/20 focus:outline-none focus:border-purple text-black dark:text-white"
+                    required
+                />
+                <textarea
+                    placeholder="Tu mensaje"
+                    rows="5"
+                    class="md:col-span-2 p-4 rounded-xl bg-white/10 border border-black/50 dark:border-white/20 focus:outline-none focus:border-purple text-black dark:text-white"
+                    required></textarea>
+
+                <button
+                    class="md:col-span-2 py-3 px-6 rounded-xl bg-purple-400 hover:bg-purple-400/80 transition shadow-lg font-semibold"
+                >
+                    Enviar Mensaje
+                </button>
+            </form>
+
+            <p id="status"></p>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            /** @type {HTMLFormElement | null} */
+                            const form = document.getElementById("contactForm");
+
+                            /** @type {HTMLElement | null} */
+                            const status = document.getElementById("status");
+
+                            if (!form || !status) {
+                                console.error(
+                                    "Formulario o contenedor de estado no encontrados.",
+                                );
+                                return;
+                            }
+
+                            form.addEventListener("submit", async (event) => {
+                                event.preventDefault();
+
+                                const data = new FormData(form);
+
+                                try {
+                                    const response = await fetch(form.action, {
+                                        method: form.method,
+                                        body: data,
+                                        headers: { Accept: "application/json" },
+                                    });
+
+                                    if (response.ok) {
+                                        status.textContent =
+                                            "Mensaje enviado correctamente";
+                                        status.style.color = "green";
+                                        form.reset();
+                                    } else {
+                                        status.textContent =
+                                            "Hubo un error al enviar el mensaje";
+                                        status.style.color = "red";
+                                    }
+                                } catch (error) {
+                                    status.textContent = "Error de conexión";
+                                    status.style.color = "red";
+                                }
+                            });
+                        });
+                    </script>            
+        </section>
+    </body>
+</html>

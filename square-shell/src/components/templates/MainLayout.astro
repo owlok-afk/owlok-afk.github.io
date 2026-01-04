@@ -1,0 +1,30 @@
+---
+const { title = "Portafolio" } = Astro.props;
+---
+
+<html
+    lang="es"
+    class="bg-white dark:bg-gray-700 text-darkBlue dark:text-white"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <body class="font-urbanist min-h-screen transition-colors duration-300">
+        <slot />
+    </body>
+</html>

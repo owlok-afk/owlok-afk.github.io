@@ -1,0 +1,46 @@
+---
+/**
+ * Icon.astro
+ * Componente de íconos SVG ligeros que heredan color por `currentColor`.
+ * Tipado para evitar `implicit any` en Astro (TypeScript).
+ */
+
+const props: { name?: string; class?: string } = Astro.props;
+const name: string = props.name ?? "code";
+const className: string = props.class ?? "";
+
+const icons: Record<string, string> = {
+    code: `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+    </svg>
+  `,
+    settings: `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 8a4 4 0 100 8 4 4 0 000-8zm8.94 4a7.967 7.967 0 01-.34 2.34l2.03 1.58a1 1 0 01.11 1.41l-1.91 3.3a1 1 0 01-1.28.38l-2.39-.96a8.061 8.061 0 01-2.03 1.18l-.36 2.54A1 1 0 0112 24h-4a1 1 0 01-1-.85l-.36-2.54a8.05 8.05 0 01-2.03-1.18l-2.39.96a1 1 0 01-1.28-.38L.03 18.73a1 1 0 01.11-1.41l2.03-1.58A7.94 7.94 0 011.82 12c0-.81.12-1.59.34-2.34L.13 8.08A1 1 0 01.02 6.67L1.93 3.37a1 1 0 011.28-.38l2.39.96A8.05 8.05 0 017.63 2.7l.36-2.54A1 1 0 019 0h4a1 1 0 011 .85l.36 2.54a8.061 8.061 0 012.03 1.18l2.39-.96a1 1 0 011.28.38l1.91 3.29a1 1 0 01-.11 1.41l-2.03 1.58c.22.75.34 1.53.34 2.34z" />
+    </svg>
+  `,
+    cpu: `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M9 2v2m6-2v2m-9 3H3v6h3m12-6h3v6h-3M9 20v2m6-2v2M7 9h10v6H7z" />
+    </svg>
+  `,
+    github: `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 .297a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.57v-2.02c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 0 0-1.34-1.76c-1.1-.75.08-.74.08-.74a2.53 2.53 0 0 1 1.85 1.24a2.56 2.56 0 0 0 3.5 1a2.56 2.56 0 0 1 .76-1.6c-2.67-.3-5.47-1.34-5.47-5.95a4.66 4.66 0 0 1 1.24-3.24a4.32 4.32 0 0 1 .12-3.19s1-.32 3.3 1.23a11.38 11.38 0 0 1 6 0C17 6.48 18 6.8 18 6.8a4.32 4.32 0 0 1 .12 3.19a4.66 4.66 0 0 1 1.24 3.24c0 4.62-2.8 5.65-5.48 5.95a2.86 2.86 0 0 1 .82 2.22v3.29c0 .31.22.68.82.56A12 12 0 0 0 12 .297Z"/>
+    </svg>
+  `,
+    mail: `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M2 4h20v16H2zm10 9L2 6v12h20V6z"/>
+    </svg>
+  `,
+};
+
+const svg = icons[name] ?? icons["code"];
+---
+
+<div class={className} set:html={svg} />

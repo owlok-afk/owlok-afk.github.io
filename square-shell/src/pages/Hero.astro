@@ -1,0 +1,64 @@
+---
+import Button from "../components/atoms/Button.astro";
+import "../styles/global.css";
+import Navbar from "../components/organisms/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en" class="bg-white dark:bg-gray-700 text-darkBlue dark:text-white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <body>
+        <Navbar />
+        <section
+            class="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
+        >
+            <!-- Fondo con gradiente animado -->
+            <div
+                class="absolute inset-0 -z-10 bg-linear-to-br from-darkBlue via-purple to-cyan opacity-30 animate-gradient"
+            >
+            </div>
+
+            <!-- Avatar -->
+            <img
+                src="/images/avatar/profile.png"
+                alt="Avatar"
+                class="w-40 h-40 rounded-full shadow-xl border-4 border-softWhite mb-6"
+            />
+
+            <!-- Título -->
+            <h1
+                class="text-3xl font-bold bg-linear-to-r from-purple-600 to-pink bg-clip-text animate-gradient-text"
+            >
+                Hola, soy Juan Eduardo Fuentes Cruz
+            </h1>
+
+            <!-- Subtítulo -->
+            <p class="mt-4 text-xl text-softWhite/80 max-w-2xl">
+                Desarrollador Web & Ingeniero en Sistemas.
+            </p>
+
+            <!-- Botones -->
+            <div class="mt-8 flex gap-4">
+                <Button label="Ver Proyectos" href="/ProjectsGrid" />
+                <Button label="Habilidades" href="/SkillsSection" variant="outline" />
+            </div>
+        </section>
+    </body>
+</html>

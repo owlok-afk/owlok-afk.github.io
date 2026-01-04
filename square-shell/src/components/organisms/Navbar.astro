@@ -1,0 +1,120 @@
+---
+import "../../styles/global.css";
+---
+
+<!-- Botón Hamburguesa (solo móvil) -->
+<button
+    id="menu-btn"
+    class="md:hidden fixed top-4 left-4 z-50 p-2 bg-gray-900 text-white rounded-lg"
+>
+    <div class="space-y-1.5">
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+    </div>
+</button>
+
+<!-- Sidebar -->
+<aside
+    id="sidebar"
+    class="fixed top-0 left-0 h-screen w-60 bg-gray-900 text-white z-40
+         -translate-x-64 transition-transform md:translate-x-0"
+>
+    <div class="p-6 text-2xl font-bold border-b border-gray-700">
+        Mi Portafolio
+    </div>
+
+    <nav class="p-4 flex flex-col gap-4 text-lg">
+        <a href="/" class="hover:text-gray-300">Inicio</a>
+        <a href="AboutSection" class="hover:text-gray-300">Sobre mi</a>
+        <a href="SkillsSection" class="hover:text-gray-300">Habilidades</a>
+        <a href="ProjectsGrid" class="hover:text-gray-300">Proyectos</a>
+        <a href="ContactForm" class="hover:text-gray-300">Contacto</a>
+    </nav>
+    <button id="theme-toggle" class="rounded">
+        <img
+            src="/images/ui/luna.png"
+            alt="Icono luna"
+            width="100px"
+            class="text-blue-200 absolute bottom-20 ml-15 text-center"
+        />
+    </button>
+    <!-- Redes Sociales -->
+    <div
+        class="flex justify-center gap-8 mt-16 text-4xl text-cyan animate-fade-in"
+    >
+        <div class="bg-white w-[100px] absolute bottom-0">
+            <a
+                href="#"
+                target="_self"
+                class="hover:text-blue-500 transition-colors"
+            >
+                <div class="bg-white w-[50px] rounded-full absolute bottom-0">
+                    <img
+                        src="/images/logos/github.png"
+                        alt="LinkedIn"
+                        width="50px"
+                    />
+                </div>
+            </a>
+            <a
+                href="#"
+                target="_self"
+                class="hover:text-blue-500 transition-colors text-center"
+            >
+                <div class="bg-white w-[50px] rounded-full ml-10 absolute bottom-0">
+                    <img
+                        src="/images/logos/facebook.png"
+                        alt="Facebook"
+                        width="50px"
+                    />
+                </div>                
+            </a>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="md:ml-60 p-6">
+        <slot />
+    </div>
+
+    <!-- JS para abrir/cerrar el menú (solo móvil) -->
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const sidebar = document.getElementById("sidebar");
+
+        if (menuBtn && sidebar) {
+            menuBtn.addEventListener("click", () => {
+                sidebar.classList.toggle("-translate-x-64");
+            });
+        }
+
+        window.onload = () => {
+            const btn = document.getElementById("theme-toggle");
+
+            if (!btn) return; // evita errores
+
+            btn.addEventListener("click", () => {
+                const html = document.documentElement;
+                const isDark = html.classList.contains("dark");
+
+                if (isDark) {
+                    html.classList.remove("dark");
+                    localStorage.theme = "light";
+                    btn.innerHTML =
+                        '<img src="/images/ui/luna.png" alt="Icono luna" width="100px" class="text-blue-200 absolute bottom-1 text-center bottom-20 ml-15">';
+                } else {
+                    html.classList.add("dark");
+                    localStorage.theme = "dark";
+                    btn.innerHTML =
+                        '<img src="/images/ui/sol.png" alt="Icono sol" width="100px" class="text-blue-200 absolute bottom-1 text-center bottom-20 ml-15">';
+                }
+            });
+
+            if (document.documentElement.classList.contains("dark")) {
+                btn.innerHTML =
+                    '<img src="/images/ui/sol.png" alt="Icono sol" width="100px" class="text-blue-200 absolute bottom-1 text-center bottom-20 ml-15">';
+            }
+        };
+    </script>
+</aside>
