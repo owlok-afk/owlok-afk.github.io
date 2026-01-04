@@ -1,17 +1,13 @@
 {
   "name": "square-shell",
+  "version": "1.0.0",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.15",
-    "astro": "^5.14.7",
-    "motion": "^12.23.24",
-    "tailwindcss": "^4.1.15"
+    "astro": "^5.14.7"
   }
 }
