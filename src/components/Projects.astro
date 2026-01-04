@@ -1,0 +1,399 @@
+---
+import interledgerImg from '../images/interledger_2.png';
+import celestialImg from '../images/celestial.jpeg';
+import luminaImg from '../images/lumina.jpeg';
+
+const projects = [
+	{
+		title: "Open Wallet",
+		description: "Plataforma de pagos interbancarios para hackathon en CDMX. Utiliza la api de Interledger para transacciones.",
+		technologies: ["JavaScript", "Interledger", "API"],
+		githubUrl: "https://github.com/owlok-afk/interledger_cdmx",
+		image: interledgerImg,
+	},
+	{
+		title: "Celestial.oi",
+		description: "Juego desarrollado en Godot con mecánicas dinámicas de crecimiento.",
+		technologies: ["Godot", "GDScript", "Game Design"],
+		githubUrl: "https://github.com/owlok-afk/Celestial.oi",
+		image: celestialImg,
+	},
+	{
+		title: "Lumina",
+		description: "Aplicación de comunicación para personas con dificultades del habla. Interfaz intuitiva en React.",
+		technologies: ["React", "JavaScript", "UX/UI"],
+		githubUrl: "https://github.com/owlok-afk/Lumina",
+		image: luminaImg,
+	},
+];
+---
+
+<section id="projects" class="projects">
+	<div class="container">
+		<h2>Proyectos Destacados</h2>
+		<p class="section-description">Una selección de mis trabajos más recientes</p>
+		
+		<div class="projects-list">
+			{projects.map((project, index) => (
+				<article class="project-card" style={`--delay: ${index * 0.1}s`}>
+					<div class="card-inner">
+						<div class="project-image">
+							<img src={project.image.src} alt={project.title} loading="lazy" />
+							<div class="image-overlay">
+								<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="view-project">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+										<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+										<polyline points="15 3 21 3 21 9"></polyline>
+										<line x1="10" y1="14" x2="21" y2="3"></line>
+									</svg>
+									Ver Proyecto
+								</a>
+							</div>
+						</div>
+						
+						<div class="project-content">
+							<div class="project-header">
+								<h3>{project.title}</h3>
+								<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
+									<svg viewBox="0 0 24 24" fill="currentColor">
+										<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+									</svg>
+								</a>
+							</div>
+							
+							<p class="project-description">{project.description}</p>
+							
+							<div class="tech-stack">
+								{project.technologies.map((tech) => (
+									<span class="tech-badge">{tech}</span>
+								))}
+							</div>
+						</div>
+					</div>
+				</article>
+			))}
+		</div>
+		
+		<div class="cta-section">
+			<p class="cta-text">¿Quieres ver más?</p>
+			<a href="https://github.com/owlok-afk" target="_blank" rel="noopener noreferrer" class="btn-github">
+				<svg viewBox="0 0 24 24" fill="currentColor">
+					<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+				</svg>
+				Explorar GitHub
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Sección proyectos */
+	.projects {
+		padding: 6rem 2rem;
+		background: #0a0a0a;
+		position: relative;
+	}
+
+	/* Línea decorativa superior */
+	.projects::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.4), transparent);
+	}
+
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	/* Título*/
+	h2 {
+		font-size: clamp(2.5rem, 5vw, 4rem);
+		text-align: center;
+		margin-bottom: 1rem;
+		color: #f8fafc;
+		position: relative;
+		font-weight: 800;
+		text-shadow: 0 0 30px rgba(148, 163, 184, 0.3);
+	}
+
+	/* Descripción*/
+	.section-description {
+		text-align: center;
+		color: #94a3b8;
+		font-size: 1.1rem;
+		margin-bottom: 4rem;
+		font-weight: 400;
+	}
+
+	/* Lista de proyectos*/
+	.projects-list {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		margin-bottom: 5rem;
+	}
+
+	/* Tarjeta con animación*/
+	.project-card {
+		opacity: 0;
+		animation: slideIn 0.6s ease forwards;
+		animation-delay: var(--delay);
+	}
+
+	@keyframes slideIn {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Contenedor interno */
+	.card-inner {
+		background: linear-gradient(135deg, rgba(15, 15, 15, 0.95), rgba(30, 30, 30, 0.95));
+		border: 1px solid rgba(148, 163, 184, 0.3);
+		border-radius: 20px;
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: 400px 1fr;
+		transition: all 0.3s;
+		position: relative;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+	}
+
+	/* Efecto de brillo*/
+	.card-inner::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(241, 245, 249, 0.08) 0%, transparent 50%);
+		opacity: 0;
+		transition: opacity 0.3s;
+		pointer-events: none;
+	}
+
+	.project-card:hover .card-inner::before {
+		opacity: 1;
+	}
+
+	.project-card:hover .card-inner {
+		border-color: rgba(203, 213, 225, 0.5);
+		box-shadow: 0 8px 30px rgba(148, 163, 184, 0.4), 0 0 50px rgba(203, 213, 225, 0.15);
+		transform: translateY(-5px);
+	}
+
+	/* Contenedor de imagenes*/
+	.project-image {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.project-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.5s;
+	}
+
+	.project-card:hover .project-image img {
+		transform: scale(1.1);
+	}
+
+	/* Overlay sobre imagen*/
+	.image-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+
+	.project-card:hover .image-overlay {
+		opacity: 1;
+	}
+
+	/* Botón de ver proyecto */
+	.view-project {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.9rem 2rem;
+		background: linear-gradient(135deg, #94a3b8, #cbd5e1);
+		color: #0f172a;
+		text-decoration: none;
+		border-radius: 50px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: all 0.3s;
+		box-shadow: 0 4px 15px rgba(148, 163, 184, 0.4);
+	}
+
+	.view-project svg {
+		width: 18px;
+		height: 18px;
+	}
+
+	.view-project:hover {
+		background: linear-gradient(135deg, #cbd5e1, #f1f5f9);
+		transform: scale(1.05);
+		box-shadow: 0 6px 25px rgba(148, 163, 184, 0.6);
+	}
+
+	/* Contenido*/
+	.project-content {
+		padding: 2.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	/* Header con título */
+	.project-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 1rem;
+	}
+
+	h3 {
+		font-size: 1.8rem;
+		color: #f8fafc;
+		font-weight: 700;
+		background: linear-gradient(135deg, #f8fafc, #cbd5e1);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	/* Enlace de GitHub */
+	.github-link {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(148, 163, 184, 0.1);
+		border: 1px solid rgba(148, 163, 184, 0.3);
+		border-radius: 10px;
+		transition: all 0.3s;
+	}
+
+	.github-link svg {
+		width: 20px;
+		height: 20px;
+		color: #cbd5e1;
+		transition: color 0.3s;
+	}
+
+	.github-link:hover {
+		background: linear-gradient(135deg, #94a3b8, #cbd5e1);
+		border-color: transparent;
+		transform: scale(1.1);
+	}
+
+	.github-link:hover svg {
+		color: #0f172a;
+	}
+
+	/* Descripción */
+	.project-description {
+		color: #cbd5e1;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+
+	.tech-stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+	}
+
+	.tech-badge {
+		background: rgba(148, 163, 184, 0.1);
+		border: 1px solid rgba(148, 163, 184, 0.3);
+		color: #e2e8f0;
+		padding: 0.5rem 1rem;
+		border-radius: 20px;
+		font-size: 0.85rem;
+		font-weight: 500;
+		transition: all 0.3s;
+	}
+
+	.tech-badge:hover {
+		background: rgba(148, 163, 184, 0.2);
+		border-color: rgba(203, 213, 225, 0.5);
+		transform: translateY(-2px);
+	}
+
+	.cta-section {
+		text-align: center;
+		padding: 3rem 2rem;
+		background: linear-gradient(135deg, rgba(15, 15, 15, 0.5), rgba(30, 30, 30, 0.5));
+		border: 1px solid rgba(148, 163, 184, 0.2);
+		border-radius: 20px;
+		backdrop-filter: blur(10px);
+	}
+
+	.cta-text {
+		font-size: 1.3rem;
+		color: #cbd5e1;
+		margin-bottom: 1.5rem;
+		font-weight: 500;
+	}
+
+	/* Botón principal github*/
+	.btn-github {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 1.2rem 3rem;
+		background: linear-gradient(135deg, #94a3b8, #cbd5e1);
+		color: #0f172a;
+		text-decoration: none;
+		border-radius: 50px;
+		font-weight: 600;
+		font-size: 1.05rem;
+		transition: all 0.3s;
+		box-shadow: 0 4px 20px rgba(148, 163, 184, 0.4);
+	}
+
+	.btn-github svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	.btn-github:hover {
+		background: linear-gradient(135deg, #cbd5e1, #f1f5f9);
+		transform: translateY(-3px);
+		box-shadow: 0 8px 30px rgba(148, 163, 184, 0.6), 0 0 40px rgba(203, 213, 225, 0.2);
+	}
+
+	/* Responsive*/
+	@media (max-width: 768px) {
+		.card-inner {
+			grid-template-columns: 1fr;
+		}
+
+		.project-image {
+			height: 250px;
+		}
+
+		.project-content {
+			padding: 2rem;
+		}
+	}
+</style>
