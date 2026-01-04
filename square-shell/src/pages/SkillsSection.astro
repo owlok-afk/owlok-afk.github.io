@@ -1,0 +1,171 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/organisms/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en"
+class="bg-white dark:bg-gray-700 text-darkBlue dark:text-white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Habilidades</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <body>
+        <Navbar />
+
+        <section id="skills" class="max-w-6xl mx-auto px-6 py-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- ======= Categoría: Frontend ======= -->
+                <div
+                    class="bg-white/10 dark:bg-white/5 p-6 rounded-2xl shadow-md backdrop-blur border border-white/10
+             hover:shadow-xl hover:-translate-y-2 hover:rotate-1 transition-all
+             animate-slideUp"
+                >
+                
+                    <h3 class="text-xl font-semibold mb-3">Desarrollo WEB</h3>
+                    <div class="flex gap-2 flex-wrap text-sm">
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300"
+                            >HTML</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300"
+                            >CSS</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-300"
+                            >JavaScript</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-cyan-400/20 text-cyan-300"
+                            >TailwindCSS</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-pink-400/20 text-pink-300"
+                            >Astro</span
+                        >
+                    </div>
+                </div>
+
+                <!-- ======= Categoría: Backend ======= -->
+                <div
+                    class="bg-white/10 dark:bg-white/5 p-6 rounded-2xl shadow-md backdrop-blur border border-white/10
+             hover:shadow-xl hover:-translate-y-2 hover:rotate-1 transition-all
+             animate-slideUp [animation-delay:0.1s]"
+                >
+                    <h3 class="text-xl font-semibold mb-3">Programación</h3>
+                    <div class="flex gap-2 flex-wrap text-sm">
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-500/20 text-green-300"
+                            >Python</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-400/20 text-purple-300"
+                            >Flask</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-500/20 text-gray-300"
+                            >Godot</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-orange-400/20 text-orange-300"
+                            >Bash</span
+                        >
+                    </div>
+                </div>
+
+                <!-- ======= Categoría: DevOps / Sysadmin ======= -->
+                <div
+                    class="bg-white/10 dark:bg-white/5 p-6 rounded-2xl shadow-md backdrop-blur border border-white/10
+             hover:shadow-xl hover:-translate-y-2 hover:rotate-1 transition-all
+             animate-slideUp [animation-delay:0.2s]"
+                >
+                    <h3 class="text-xl font-semibold mb-3">
+                        DevOps & Herramientas
+                    </h3>
+                    <div class="flex gap-2 flex-wrap text-sm">
+                        <span
+                            class="px-3 py-1 rounded-full bg-indigo-400/20 text-indigo-300"
+                            >Git</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-teal-400/20 text-teal-300"
+                            >Docker</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-red-400/20 text-red-300"
+                            >Nginx</span
+                        >                       
+                    </div>
+                </div>
+
+                <!-- ======= Categoría: Linux / SysAdmin ======= -->
+                <div
+                    class="bg-white/10 dark:bg-white/5 p-6 rounded-2xl shadow-md backdrop-blur border border-white/10
+             hover:shadow-xl hover:-translate-y-2 hover:rotate-1 transition-all
+             animate-slideUp [animation-delay:0.3s]"
+                >
+                    <h3 class="text-xl font-semibold mb-3">Sistemas Operativos</h3>
+                    <div class="flex gap-2 flex-wrap text-sm">
+                        <span
+                            class="px-3 py-1 rounded-full bg-gray-400/20 text-gray-300"
+                            >Linux</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-400/20 text-green-300"
+                            >Debian</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-sky-400/20 text-sky-300"
+                            >Windows</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-rose-400/20 text-rose-300"
+                            >Fedora</span
+                        >                       
+                    </div>
+                </div>
+
+                <!-- ======= Categoría: Game Dev ======= -->
+                <div
+                    class="bg-white/10 dark:bg-white/5 p-6 rounded-2xl shadow-md backdrop-blur border border-white/10
+             hover:shadow-xl hover:-translate-y-2 hover:rotate-1 transition-all
+             animate-slideUp [animation-delay:0.4s]"
+                >
+                    <h3 class="text-xl font-semibold mb-3">Networking</h3>
+                    <div class="flex gap-2 flex-wrap text-sm">
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-400/20 text-purple-300"
+                            >Diseño y configuración de redes</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-400/20 text-blue-300"
+                            >VLANs</span
+                        >
+                        <span
+                            class="px-3 py-1 rounded-full bg-orange-400/20 text-orange-300"
+                            >Configuración de routers</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

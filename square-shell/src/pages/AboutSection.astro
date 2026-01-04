@@ -1,0 +1,69 @@
+---
+import Icon from "../components/atoms/Icon.astro";
+import "../styles/global.css";
+import Navbar from "../components/organisms/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en" class="bg-white dark:bg-gray-700 text-darkBlue dark:text-white">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sobre mi</title>
+        <script is:inline>
+            const saved = localStorage.theme;
+
+            if (
+                saved === "dark" ||
+                (!saved &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+    </head>
+    <body>
+        <Navbar />
+        <section
+            id="about"
+            class="min-h-[60vh] py-24 px-6 grid md:grid-cols-2 gap-12 items-center"
+        >
+            <!-- Foto -->
+            <div class="flex justify-center">
+                <img
+                    src="/images/avatar/profile2.png"
+                    alt="Juan Eduardo"
+                    class="w-64 h-64 rounded-2xl shadow-2xl border-4 border-purple object-cover animate-fade-in"
+                />
+            </div>
+
+            <!-- Texto y contenido -->
+            <div class="space-y-6 animate-slide-up">
+                <h2 class="text-4xl font-bold text-purple">Sobre Mí</h2>
+
+                <p class="text-lg text-softWhite/80 leading-relaxed max-w-xl text-justify">
+                    Soy estudiante de Ingeniería en Sistemas Computacionales,
+                    actualmente cursando el séptimo semestre. Me caracterizo por
+                    aplicar de manera práctica todos los conocimientos
+                    adquiridos durante mi formación, desarrollando soluciones
+                    eficientes y seguras en entornos reales. Tengo experiencia
+                    trabajando con entornos Windows y Linux (Debian), así como
+                    en el diseño y simulación de redes mediante Cisco Packet
+                    Tracer. Además, poseo conocimientos en programación web y
+                    bases fundamentales en Python, lo que complementa mi perfil
+                    técnico y me permite abordar problemas desde un punto de
+                    vista integral.
+                </p>
+
+                <!-- Habilidades principales -->
+                <div class="flex gap-6 text-4xl text-cyan drop-shadow-lg">
+                    <Icon name="code" />
+                    <Icon name="settings" />
+                    <Icon name="cpu" />
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
