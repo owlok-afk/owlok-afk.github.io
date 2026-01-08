@@ -7,7 +7,7 @@ author: 'Alejandro Sánchez García'
 category: 'Experiencia'
 image:
     image:
-    url: '/src/images/blog_4.png'
+    url: '/images/blog_4.png'
     alt: 'Banco de México'
 tags: ["finanzas", "historia", "economía", "educación"]
 ---

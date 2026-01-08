@@ -7,7 +7,7 @@ author: 'Alejandro Sánchez García'
 category: 'Investigación'
 image:
     image:
-    url: '/src/images/blog_2.png'
+    url: '/images/blog_2.png'
     alt: 'Programa Delfín - Lumina'
 tags: ["investigación", "accesibilidad", "react", "ux/ui"]
 ---

@@ -7,7 +7,7 @@ author: 'Alejandro Sánchez García'
 category: 'Educación'
 image:
     image:
-    url: '/src/images/blog_3.png'
+    url: '/images/blog_3.png'
     alt: 'Universidad Mexiquense del Bicentenario'
 tags: ["educación", "universidad", "aprendizaje", "desarrollo profesional"]
 ---

@@ -7,7 +7,7 @@ author: 'Alejandro Sánchez García'
 category: 'Robótica'
 image:
     image:
-    url: '/src/images/blog_5.png'
+    url: '/images/blog_5.png'
     alt: 'Torneo de Robots de Combate'
 tags: ["robótica", "competencia", "ingeniería", "trabajo en equipo"]
 ---

@@ -7,7 +7,7 @@ author: 'Alejandro Sánchez García'
 category: 'Hackathon'
 image:
     image:
-    url: '/src/images/blog_1.png'
+    url: '/images/blog_1.png'
     alt: 'Hackathon de Interledger en CDMX'
 tags: ["hackathon", "interledger", "desarrollo", "trabajo en equipo"]
 ---
