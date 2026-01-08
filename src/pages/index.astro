@@ -15,9 +15,10 @@ import ContactForm from "../components/molecules/ContactForm.jsx";
 	<Skills />
 	<Projects />
 	<Blog />
-	<ContactForm client:load />
+	<section id="contact-form">
+		<ContactForm client:load />
+	</section>
 	<Contact />
-	
 </Layout>
 
 <style is:global>
@@ -58,5 +59,9 @@ import ContactForm from "../components/molecules/ContactForm.jsx";
 
 	::-webkit-scrollbar-thumb:hover {
 		background: linear-gradient(135deg, #ffffff, #000000);
+	}
+	
+	#contact-form {
+		padding: 0;
 	}
 </style>
