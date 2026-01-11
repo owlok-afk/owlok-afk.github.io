@@ -1,0 +1,251 @@
+---
+// src/pages/posts/[id].astro
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = import.meta.glob('../../content/*.md', { eager: true });
+
+  const paths = Object.entries(posts).map(([path, post]: [string, any]) => {
+    const filename = path.split('/').pop()?.replace('.md', '') || '';
+
+    return {
+      params: { id: filename },
+      props: { post }
+    };
+  });
+
+  return paths;
+}
+
+const { post } = Astro.props;
+const { Content } = await post;
+const { title, pubDate, description, author, category, image } = post.frontmatter;
+---
+
+<Layout title={title}>
+  <section id="post-view" style="display: block !important;">
+    <main class="post-container">
+      <article class="post">
+        {image && (
+          <div class="post-image">
+            <img src={image.url} alt={image.alt} />
+          </div>
+        )}
+
+        <header class="post-header">
+          <span class="post-category">{category}</span>
+          <h1 class="post-title">{title}</h1>
+          <div class="post-meta">
+            <time class="post-date">
+              {new Date(pubDate).toLocaleDateString('es-ES', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}
+            </time>
+            {author && <span class="post-author">Por {author}</span>}
+          </div>
+        </header>
+
+        <div class="post-content">
+          <Content />
+        </div>
+
+        <footer class="post-footer">
+          <a href="/#blog" class="back-btn" id="backToBlog">
+            ← Volver al blog
+          </a>
+        </footer>
+      </article>
+    </main>
+  </section>
+</Layout>
+
+<script>
+  // Asegurar que el post se vea y limpiar navegación
+  if (typeof window !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mostrar la sección del post
+      const postSection = document.getElementById('post-view');
+      if (postSection) {
+        postSection.style.display = 'block';
+        postSection.style.opacity = '1';
+        postSection.style.transform = 'translateY(0)';
+      }
+
+      // Ocultar todas las demás secciones
+      const allSections = document.querySelectorAll('section[id]:not(#post-view)');
+      allSections.forEach(section => {
+        (section as HTMLElement).style.display = 'none';
+      });
+
+      // Manejar botón de volver al blog
+      const backBtn = document.getElementById('backToBlog');
+      if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          localStorage.setItem('currentSection', 'blog');
+          window.location.href = '/#blog';
+        });
+      }
+    });
+  }
+</script>
+
+<style is:global>
+  .post-container {
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    background: #0a0a0a;
+  }
+
+  .post {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .post-image {
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    max-height: 500px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .post-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .post-header {
+    margin-bottom: 3rem;
+  }
+
+  .post-category {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .post-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    color: #888;
+    font-size: 0.95rem;
+  }
+
+  .post-content {
+    color: #e2e8f0;
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+
+  .post-content h1,
+  .post-content h2,
+  .post-content h3 {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .post-content h1 {
+    font-size: 2rem;
+  }
+
+  .post-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .post-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content ul,
+  .post-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .post-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .post-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.85rem 1.75rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .post-container {
+      padding: 100px 15px 40px;
+    }
+
+    .post-title {
+      font-size: 2rem;
+    }
+
+    .post-content {
+      font-size: 1rem;
+    }
+
+    .post-content h1 {
+      font-size: 1.75rem;
+    }
+
+    .post-content h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>

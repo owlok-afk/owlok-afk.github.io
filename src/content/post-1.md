@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Layout.astro
 title: 'Hackathon de Interledger en CDMX'
 pubDate: 2024-11-08
 description: 'Una experiencia intensa de 48 horas desarrollando Open Wallet, una plataforma de pagos interbancarios utilizando la API de Interledger.'
@@ -9,7 +8,6 @@ image:
     image:
     url: '/images/blog_1.png'
     alt: 'Hackathon de Interledger en CDMX'
-tags: ["hackathon", "interledger", "desarrollo", "trabajo en equipo"]
 ---
 
 # Hackathon de Interledger en CDMX

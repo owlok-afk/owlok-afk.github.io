@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Layout.astro
 title: 'Estadía en la UMB San José del Rincón'
 pubDate: 2025-01-07
 description: 'Actualmente curso mi estadía en la Universidad Mexiquense del Bicentenario campus San José del Rincón, una experiencia de aprendizaje continuo.'
@@ -9,7 +8,6 @@ image:
     image:
     url: '/images/blog_3.png'
     alt: 'Universidad Mexiquense del Bicentenario'
-tags: ["educación", "universidad", "aprendizaje", "desarrollo profesional"]
 ---
 
 # Estadía en la UMB San José del Rincón

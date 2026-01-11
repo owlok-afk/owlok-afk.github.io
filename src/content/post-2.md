@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Layout.astro
 title: 'Estadía Virtual en el Programa Delfín: Desarrollando Lumina'
 pubDate: 2024-10-01
 description: 'Durante todo el mes de octubre participé en el Programa Delfín, donde desarrollé Lumina, una aplicación de comunicación para personas con dificultades del habla.'
@@ -9,7 +8,6 @@ image:
     image:
     url: '/images/blog_2.png'
     alt: 'Programa Delfín - Lumina'
-tags: ["investigación", "accesibilidad", "react", "ux/ui"]
 ---
 
 # Estadía Virtual en el Programa Delfín: Desarrollando Lumina

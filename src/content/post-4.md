@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Layout.astro
 title: 'Visita al Banco de México en CDMX'
 pubDate: 2024-11-11
 description: 'Una fascinante visita al Banco de México donde exploré la historia económica del país y los sistemas financieros que sostienen nuestra economía.'
@@ -9,7 +8,6 @@ image:
     image:
     url: '/images/blog_4.png'
     alt: 'Banco de México'
-tags: ["finanzas", "historia", "economía", "educación"]
 ---
 
 # Visita al Banco de México en CDMX

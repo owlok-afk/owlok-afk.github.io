@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Layout.astro
 title: 'Torneo de Robots de Combate en la UMB'
 pubDate: 2024-12-05
 description: 'Participación en el torneo de robots de combate organizado en la UMB'
@@ -9,7 +8,6 @@ image:
     image:
     url: '/images/blog_5.png'
     alt: 'Torneo de Robots de Combate'
-tags: ["robótica", "competencia", "ingeniería", "trabajo en equipo"]
 ---
 
 # Torneo de Robots de Combate en la UMB
