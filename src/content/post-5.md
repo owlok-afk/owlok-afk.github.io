@@ -18,24 +18,15 @@ El torneo fue una experiencia muy divertida como productiva. Participamos como e
 
 Diseñar y construir un robot capaz de resistir el combate requirió:
 
-1. **Diseño estructural**: Crear una estructura resistente pero ágil
-2. **Programación**: Desarrollar algoritmos de control efectivos
-3. **Estrategia**: Planear tácticas de combate
-4. **Trabajo en equipo**: Coordinar esfuerzos entre todos los miembros
+1. **Diseño estructural**: Crear una estructura resistente
+2. **Estrategia**: Planear tácticas de combate
+3. **Trabajo en equipo**: Coordinarnos para trabajar sobre varias situaciones
 
 ## La Competencia
 
-Por fortuna, nuestro robot resistió bien y logramos avanzar varias rondas. La emoción de ver nuestro diseño funcionando en el ring fue increíble.
+Por fortuna, nuestro robot resistió bien y logramos ganar el primer lugar, fue algo muy divertido y emocionante.
 
-## Victoria
-
-Después de múltiples batallas intensas, conseguimos **el primer lugar**. Este logro fue el resultado de:
-
-- Planificación cuidadosa
-- Pruebas exhaustivas
-- Adaptación rápida durante las batallas
-- Excelente coordinación del equipo
 
 ## Aprendizajes
 
-Esta experiencia nos enseñó la importancia de la ingeniería práctica, la resolución de problemas bajo presión y cómo el trabajo en equipo puede superar cualquier obstáculo técnico.
+Esta experiencia nos enseñó lo divertida y única que es nuestra carrera, tanto así que valió la pena gastar una cantidad de dinero considerable para nuestro caso.

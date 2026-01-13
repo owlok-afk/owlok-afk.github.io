@@ -12,21 +12,22 @@ image:
 
 # Estadía en la UMB San José del Rincón
 
-Esta estadía representa un periodo de crecimiento profesional donde aplico conocimientos teóricos en proyectos reales.
+Actualmente, a día de hoy, estoy en séptimo semestre de la carrera de Ingeniería en Sistemas Computacionales, donde paso mis días aprendiendo y jugando, pero siempre tratando de mejorar para el futuro.
 
 ## La Experiencia Universitaria
 
-Estar en la Universidad Mexiquense del Bicentenario campus San José del Rincón es una excelente forma de pasar tiempo aprendiendo y preparándome para nuevas cosas en mi vida futura.
+Estar en la Universidad Mexiquense del Bicentenario, campus San José del Rincón, es una excelente forma de pasar el tiempo, pero sobre todo es algo que me gusta y me resulta muy agradable. Poco a poco aprendo más cosas, aunque a veces me aburro.
 
 ## Aplicación Práctica
 
 Durante esta estadía, he podido:
 
-- Aplicar teoría en proyectos reales
-- Colaborar con otros estudiantes
+- Aplicar teoría 
+- Colaborar con organizaciones y empresas
 - Desarrollar habilidades profesionales
-- Prepararme para el mundo laboral
+- Prepararme 
+- Jugar Mortal Kombat
 
 ## Reflexión
 
-Esta experiencia está siendo fundamental en mi formación como desarrollador.
+Esta experiencia está siendo fundamental en mi formación como persona y considero que el impacto en mi vida actual y futura es enorme. A veces los días son aburridos, pero vale la pena cada momento vivido con mis compañeros. Aunque en ocasiones me aburro de lo mismo después de ya tres años aquí, todo ha valido la pena.

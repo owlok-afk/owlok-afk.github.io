@@ -26,4 +26,4 @@ La visita al Banco de México nos permitió explorar:
 
 ## Impacto Personal
 
-Esta experiencia amplió mi perspectiva sobre cómo la tecnología y las finanzas se entrelazan.
+Esta experiencia fue muy interesante. Si bien tener un poco de conocimiento sobre la historia de México debería ser clave para saber cómo estamos aquí, muchos lo pasamos por alto. Este viaje fue muy entretenido y enriquecedor para conocer un poco más sobre la moneda y el sistema financiero. Además, fuimos al Bosque de Chapultepec a pasar el rato, lo cual también fue muy entretenido.
